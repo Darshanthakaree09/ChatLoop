@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "728168496624",
+    "project_id": "chatloop-backend",
+    "storage_bucket": "chatloop-backend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728168496624:android:45165dda77bbfa611b3135",
+        "android_client_info": {
+          "package_name": "com.example.chatloop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3j0Y-LVA_nA1tamFiVSTMcXQsmXp1Dhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

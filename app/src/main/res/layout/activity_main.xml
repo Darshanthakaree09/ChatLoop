@@ -41,6 +41,18 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/main_toolbar"
         android:layout_above="@id/divider"/>
+    <ImageButton
+        android:id="@+id/share_btn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/edit_text_rounded_corner"
+        android:layout_above="@id/bottm_navigation"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="40dp"
+        android:src="@drawable/share_icon"
+        app:tint="@color/my_secondary"
+        android:backgroundTint="@color/my_primary"/>
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider"
         android:layout_width="match_parent"

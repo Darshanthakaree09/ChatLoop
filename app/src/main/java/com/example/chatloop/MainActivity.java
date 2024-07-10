@@ -4,11 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -21,9 +23,11 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String message = "https://drive.google.com/drive/folders/12EOwQGDUOGrvRkmXKpJBXIIG7C_Pxmv2?usp=sharing";
 
     BottomNavigationView bottomNavigationView;
     ImageButton searchButton;
+
     ChatFragment chatFragment;
     ProfileFragment profileFragment;
     @Override
@@ -34,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         chatFragment = new ChatFragment();
         profileFragment = new ProfileFragment();
+
         bottomNavigationView = findViewById(R.id.bottm_navigation);
         searchButton = findViewById(R.id.main_search_btn);
         searchButton.setOnClickListener((v->{
@@ -53,6 +58,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         bottomNavigationView.setSelectedItemId(R.id.menu_chat);
+
+        final ImageButton sendText = findViewById(R.id.share_btn);
+        sendText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentm = new Intent(Intent.ACTION_SEND);
+                intentm.putExtra(Intent.EXTRA_TEXT, message);
+                intentm.setType("text/plain");
+                intentm.setPackage("com.whatsapp");
+                startActivity(intentm);
+            }
+        });
 
 
     }
